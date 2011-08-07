@@ -49,15 +49,15 @@ if test $? -eq 1; then echo "IP não encontrado"; exit 2; fi;
 function Listar(){
 
 # TODO - Listar todos os IPs do "ArquivoControle"
-if teste $1==""; then cat $ArquivoControle;
+if test $1==""; then cat $ArquivoControle;
 #        Sair com código de erro 0.
 exit 0; fi;
 # TODO - Caso algum IP tenha sido passado como parâmetro, usar como filtro.
 cat $ArquivoControle | grep $1;
 #        Exibir IPs encontrados com o filtro e sair com código de erro 0.
-if teste $? -eq 0; then exit 0;
+if test $? -eq 0; then exit 0;
 #        Caso nenhum IP seja encontrado, exibir mensagem de erro e sair com código de erro 3.
-else echo "Nenhum IP encontrado"; exit 3; 
+else echo "Nenhum IP encontrado"; exit 3; fi;
 
 }
 
